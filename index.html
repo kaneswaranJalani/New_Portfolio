@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Jalani Kaneswaran | UI/UX & Full Stack — Premium Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Effects -->
+  <div class="gradient-orb orb-1"></div>
+  <div class="gradient-orb orb-2"></div>
+  <div class="gradient-orb orb-3"></div>
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Scroll Progress -->
+  <div class="progress-bar-container">
+    <div class="progress-fill-bar" id="scrollProgress"></div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">Jalani.dev</div>
+      <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home"     class="nav-link">Home</a></li>
+        <li><a href="#about"    class="nav-link">About</a></li>
+        <li><a href="#skills"   class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact"  class="nav-link active">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ── Hero Section ─────────────────────────────────────────── -->
+    <section id="home">
+      <div class="container hero">
+
+        <div class="hero-left">
+          <div class="typing-container">
+            <span class="typed-text" id="typed-line"></span>
+            <span class="cursor">|</span>
+          </div>
+          <div class="static-title">UI/UX Designer | Full Stack Developer</div>
+
+          <div class="desc-box">
+            <div class="desc">
+              Passionate UI/UX Designer and Full Stack Developer with strong experience in designing
+              modern digital interfaces and building scalable web applications. Skilled in creating
+              intuitive, user-centered designs and transforming concepts into functional, visually
+              engaging digital products.
+            </div>
+          </div>
+
+          <div>
+            <a href="#projects" class="btn-primary" style="margin-right:1rem;">View Projects</a>
+            <a href="#" class="btn-secondary" id="downloadCV">Download CV</a>
+          </div>
+
+          <div class="social-icons">
+            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+          </div>
+
+          <div class="tech-marquee">
+            <div class="marquee-content">
+              <span><i class="fab fa-figma"></i> Figma</span>
+              <span><i class="fab fa-react"></i> React.js</span>
+              <span><i class="fab fa-python"></i> Python</span>
+              <span><i class="fab fa-tailwind"></i> Tailwind</span>
+              <span><i class="fas fa-database"></i> MongoDB</span>
+              <span><i class="fab fa-js"></i> JavaScript</span>
+              <span><i class="fas fa-paintbrush"></i> UI/UX</span>
+              <!-- duplicate for seamless loop -->
+              <span><i class="fab fa-figma"></i> Figma</span>
+              <span><i class="fab fa-react"></i> React.js</span>
+              <span><i class="fab fa-python"></i> Python</span>
+              <span><i class="fab fa-tailwind"></i> Tailwind</span>
+              <span><i class="fas fa-database"></i> MongoDB</span>
+              <span><i class="fab fa-js"></i> JavaScript</span>
+              <span><i class="fas fa-paintbrush"></i> UI/UX</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg"
+               alt="Jalani Kaneswaran" class="profile-img">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── About Section ────────────────────────────────────────── -->
+    <section id="about">
+      <div class="container">
+        <div class="about-box reveal">
+          <div class="about-text-box">
+            <h2>About Me</h2>
+            <p style="font-size:1.05rem; margin-bottom:1rem;">
+              I'm Jalani Kaneswaran — a creative problem-solver at the intersection of design and
+              engineering. With a deep appreciation for UI/UX craft and robust full-stack development,
+              I build digital experiences that are not only beautiful but also functional and scalable.
+            </p>
+            <p>
+              Over the years I've collaborated with cross-functional teams to design user-centered
+              interfaces and deploy full-stack applications. I blend modern frontend frameworks with
+              backend logic to create impactful digital ecosystems. Let's create something
+              extraordinary together.
+            </p>
+          </div>
+          <div class="about-img-box">
+            <img src="https://placehold.co/400x400/1E3A8A/FFFFFF?text=UI+%2B+DEV" alt="design and dev">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Skills Section ───────────────────────────────────────── -->
+    <section id="skills">
+      <div class="container">
+        <h2 class="reveal" style="font-size:2.2rem; margin-bottom:2rem; text-align:center;
+            background:linear-gradient(135deg,#FFF,#06B6D4); background-clip:text;
+            -webkit-background-clip:text; color:transparent;">
+          Technical Arsenal
+        </h2>
+
+        <div class="skills-grid">
+          <div class="skill-card reveal"><i class="fas fa-pen-fancy"></i> <div class="skill-name">Figma</div><div class="progress-bar"><div class="progress-fill" data-progress="92"></div></div><span>92%</span></div>
+          <div class="skill-card reveal"><i class="fas fa-paintbrush"></i> <div class="skill-name">Adobe XD</div><div class="progress-bar"><div class="progress-fill" data-progress="88"></div></div><span>88%</span></div>
+          <div class="skill-card reveal"><i class="fas fa-dice-d6"></i> <div class="skill-name">Canva</div><div class="progress-bar"><div class="progress-fill" data-progress="85"></div></div><span>85%</span></div>
+          <div class="skill-card reveal"><i class="fab fa-html5"></i> <div class="skill-name">HTML5</div><div class="progress-bar"><div class="progress-fill" data-progress="95"></div></div><span>95%</span></div>
+          <div class="skill-card reveal"><i class="fab fa-css3-alt"></i> <div class="skill-name">CSS3</div><div class="progress-bar"><div class="progress-fill" data-progress="90"></div></div><span>90%</span></div>
+          <div class="skill-card reveal"><i class="fab fa-tailwind"></i> <div class="skill-name">Tailwind CSS</div><div class="progress-bar"><div class="progress-fill" data-progress="89"></div></div><span>89%</span></div>
+          <div class="skill-card reveal"><i class="fab fa-js"></i> <div class="skill-name">JavaScript</div><div class="progress-bar"><div class="progress-fill" data-progress="88"></div></div><span>88%</span></div>
+          <div class="skill-card reveal"><i class="fab fa-react"></i> <div class="skill-name">React.js</div><div class="progress-bar"><div class="progress-fill" data-progress="85"></div></div><span>85%</span></div>
+          <div class="skill-card reveal"><i class="fab fa-python"></i> <div class="skill-name">Python</div><div class="progress-bar"><div class="progress-fill" data-progress="82"></div></div><span>82%</span></div>
+          <div class="skill-card reveal"><i class="fas fa-database"></i> <div class="skill-name">MongoDB</div><div class="progress-bar"><div class="progress-fill" data-progress="78"></div></div><span>78%</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Projects Section ─────────────────────────────────────── -->
+    <section id="projects">
+      <div class="container">
+        <h2 class="reveal" style="font-size:2.2rem; margin-bottom:2rem; text-align:center;
+            background:linear-gradient(135deg,#FFF,#06B6D4); background-clip:text;
+            -webkit-background-clip:text; color:transparent;">
+          Featured Work
+        </h2>
+
+        <div class="projects-grid">
+
+          <div class="project-card reveal">
+            <div class="project-img" style="font-size:3rem; text-align:center; margin-bottom:1rem;">
+              <i class="fas fa-globe-americas"></i>
+            </div>
+            <h3>Tourism Website</h3>
+            <p>Premium travel platform UI focusing on booking flow, travel packages, immersive UX.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Figma</span>
+              <span class="tech-tag">Adobe XD</span>
+            </div>
+            <div class="project-buttons">
+              <a href="#" class="btn-secondary btn-small">Case Study</a>
+              <a href="#" class="btn-primary  btn-small">Live Demo</a>
+            </div>
+          </div>
+
+          <div class="project-card reveal">
+            <div class="project-img" style="font-size:3rem; text-align:center;">
+              <i class="fas fa-mug-hot"></i>
+            </div>
+            <h3>Coffee E-Commerce</h3>
+            <p>Modern coffee shopping platform with product showcase and clean shopping flow.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">UI/UX</span>
+              <span class="tech-tag">Prototyping</span>
+            </div>
+            <div class="project-buttons">
+              <a href="#" class="btn-secondary btn-small">Case Study</a>
+              <a href="#" class="btn-primary  btn-small">Live Demo</a>
+            </div>
+          </div>
+
+          <div class="project-card reveal">
+            <div class="project-img" style="font-size:3rem; text-align:center;">
+              <i class="fas fa-perfume"></i>
+            </div>
+            <h3>Perfume Mobile App</h3>
+            <p>Luxury perfume shopping app with elegant UI and premium mobile experience.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Mobile Design</span>
+              <span class="tech-tag">Prototype</span>
+            </div>
+            <div class="project-buttons">
+              <a href="#" class="btn-secondary btn-small">Case Study</a>
+              <a href="#" class="btn-primary  btn-small">Live Demo</a>
+            </div>
+          </div>
+
+          <div class="project-card featured reveal">
+            <span class="project-badge"><i class="fas fa-star"></i> Featured Project ⭐ Full Stack</span>
+            <div class="project-img" style="font-size:3rem;"><i class="fas fa-bicycle"></i></div>
+            <h3>Bicycle Rental App</h3>
+            <p>Real-world application with booking system, dashboards, payments, user management. Complete full-stack solution.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">React.js</span>
+              <span class="tech-tag">MongoDB</span>
+            </div>
+            <div class="project-buttons">
+              <a href="#" class="btn-secondary btn-small">Case Study</a>
+              <a href="#" class="btn-primary  btn-small">Live Demo / GitHub</a>
+            </div>
+          </div>
+
+          <div class="project-card reveal">
+            <div class="project-img" style="font-size:3rem;"><i class="fas fa-plane"></i></div>
+            <h3>Airline Booking System</h3>
+            <p>Booking management system with passenger data handling and ticket workflow logic (Python).</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Flask</span>
+            </div>
+            <div class="project-buttons">
+              <a href="#" class="btn-secondary btn-small">Case Study</a>
+              <a href="#" class="btn-primary  btn-small">GitHub</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Contact Section ──────────────────────────────────────── -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="reveal" style="font-size:2.5rem; margin-bottom:2rem; text-align:center;
+            background:linear-gradient(135deg,#FFF,#06B6D4); background-clip:text;
+            -webkit-background-clip:text; color:transparent;">
+          Let's Connect
+        </h2>
+
+        <div class="contact-premium-wrapper">
+
+          <div class="contact-info-card reveal">
+            <h3>Collaborate &amp; Create</h3>
+            <p style="margin-bottom:2rem;">
+              Have a project in mind? I'm available for freelance, full-time roles, or design
+              collaborations. Let's bring ideas to life.
+            </p>
+            <div class="contact-detail-item">
+              <div class="contact-icon-big"><i class="fas fa-envelope"></i></div>
+              <div class="contact-text"><h4>Email</h4><p>hello@jalanik.dev</p></div>
+            </div>
+            <div class="contact-detail-item">
+              <div class="contact-icon-big"><i class="fab fa-linkedin-in"></i></div>
+              <div class="contact-text"><h4>LinkedIn</h4><p>/in/jalani-kaneswaran</p></div>
+            </div>
+            <div class="contact-detail-item">
+              <div class="contact-icon-big"><i class="fab fa-github"></i></div>
+              <div class="contact-text"><h4>GitHub</h4><p>github.com/jalanik</p></div>
+            </div>
+            <div class="contact-detail-item">
+              <div class="contact-icon-big"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="contact-text"><h4>Location</h4><p>Remote / Worldwide</p></div>
+            </div>
+          </div>
+
+          <div class="contact-form-glass reveal">
+            <form id="premiumContactForm">
+              <div class="form-floating-group">
+                <input type="text"  id="contactName"    placeholder=" " required>
+                <label for="contactName">Full Name *</label>
+              </div>
+              <div class="form-floating-group">
+                <input type="email" id="contactEmail"   placeholder=" " required>
+                <label for="contactEmail">Email Address *</label>
+              </div>
+              <div class="form-floating-group">
+                <input type="text"  id="contactSubject" placeholder=" " required>
+                <label for="contactSubject">Subject *</label>
+              </div>
+              <div class="form-floating-group">
+                <textarea id="contactMessage" placeholder=" " rows="4" required></textarea>
+                <label for="contactMessage">Your Message *</label>
+              </div>
+              <button type="submit" class="submit-btn">
+                <i class="fas fa-paper-plane"></i> Send Message
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>Designed &amp; Developed by Jalani Kaneswaran</p>
+    <div class="social-icons" style="justify-content:center; margin-top:1rem;">
+      <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+      <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div id="toastMsg" class="toast-msg">✨ Message sent! Thank you.</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
