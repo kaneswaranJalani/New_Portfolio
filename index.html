@@ -11,10 +11,10 @@
 <body>
 
   <!-- Custom Cursor -->
-  <div id="cursor-ring"  class="trail-dot"></div>
-  <div id="cursor-dot"   class="trail-dot"></div>
+  <div id="cursor-ring" class="trail-dot"></div>
+  <div id="cursor-dot"  class="trail-dot"></div>
 
-  <!-- Background Effects -->
+  <!-- Background -->
   <div class="gradient-orb orb-1"></div>
   <div class="gradient-orb orb-2"></div>
   <div class="gradient-orb orb-3"></div>
@@ -45,6 +45,8 @@
     <!-- ── Hero ───────────────────────────────────────────────── -->
     <section id="home">
       <div class="container hero">
+
+        <!-- Left: Text -->
         <div class="hero-left">
           <div class="typing-container">
             <span class="typed-text" id="typed-line"></span>
@@ -93,10 +95,36 @@
           </div>
         </div>
 
+        <!-- Right: Profile Card -->
         <div class="hero-right">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg"
-               alt="Jalani Kaneswaran" class="profile-img">
+          <div class="profile-card">
+
+            <!-- Floating stat badges -->
+            <div class="profile-badge badge-1">
+              <i class="fas fa-layer-group"></i> UI/UX Designer
+            </div>
+            <div class="profile-badge badge-2">
+              <i class="fas fa-code"></i> Full Stack Dev
+            </div>
+            <div class="profile-badge badge-3">
+              <i class="fas fa-star"></i> 5+ Projects
+            </div>
+            <div class="profile-badge badge-4">
+              <i class="fas fa-map-marker-alt"></i> Remote Ready
+            </div>
+
+            <!-- Profile image wrapped in glow frame -->
+            <div class="profile-img-wrap">
+              <img
+                src="https://randomuser.me/api/portraits/men/32.jpg"
+                alt="Jalani Kaneswaran"
+                class="profile-img"
+              >
+            </div>
+
+          </div>
         </div>
+
       </div>
     </section>
 
@@ -128,13 +156,16 @@
     <!-- ── Skills ─────────────────────────────────────────────── -->
     <section id="skills">
       <div class="container">
-        <h2 class="reveal" style="font-size:2.2rem; margin-bottom:2rem; text-align:center;
+        <h2 class="reveal" style="font-size:2.2rem; margin-bottom:0.5rem; text-align:center;
             background:linear-gradient(135deg,#FFF,#06B6D4); background-clip:text;
             -webkit-background-clip:text; color:transparent;">
           Technical Arsenal
         </h2>
-        <!-- Cards injected by JS -->
-        <div class="skills-grid" id="skillsGrid"></div>
+        <p class="reveal" style="text-align:center; color:#64748B; margin-bottom:2.5rem; font-size:.95rem;">
+          Tools &amp; technologies I work with
+        </p>
+        <!-- Skill category blocks injected by JS -->
+        <div class="skills-wrapper" id="skillsWrapper"></div>
       </div>
     </section>
 
@@ -149,7 +180,7 @@
         <div class="projects-grid">
 
           <div class="project-card reveal">
-            <div class="project-img" style="font-size:3rem; text-align:center; margin-bottom:1rem;">
+            <div style="font-size:3rem; text-align:center; margin-bottom:1rem;">
               <i class="fas fa-globe-americas"></i>
             </div>
             <h3>Tourism Website</h3>
@@ -165,7 +196,7 @@
           </div>
 
           <div class="project-card reveal">
-            <div class="project-img" style="font-size:3rem; text-align:center; margin-bottom:1rem;">
+            <div style="font-size:3rem; text-align:center; margin-bottom:1rem;">
               <i class="fas fa-mug-hot"></i>
             </div>
             <h3>Coffee E-Commerce</h3>
@@ -181,7 +212,7 @@
           </div>
 
           <div class="project-card reveal">
-            <div class="project-img" style="font-size:3rem; text-align:center; margin-bottom:1rem;">
+            <div style="font-size:3rem; text-align:center; margin-bottom:1rem;">
               <i class="fas fa-spray-can"></i>
             </div>
             <h3>Perfume Mobile App</h3>
@@ -198,7 +229,7 @@
 
           <div class="project-card featured reveal">
             <span class="project-badge"><i class="fas fa-star"></i> Featured Project ⭐ Full Stack</span>
-            <div class="project-img" style="font-size:3rem; margin-bottom:0.8rem;">
+            <div style="font-size:3rem; margin-bottom:.8rem;">
               <i class="fas fa-bicycle"></i>
             </div>
             <h3>Bicycle Rental App</h3>
@@ -215,7 +246,7 @@
           </div>
 
           <div class="project-card reveal">
-            <div class="project-img" style="font-size:3rem; text-align:center; margin-bottom:1rem;">
+            <div style="font-size:3rem; text-align:center; margin-bottom:1rem;">
               <i class="fas fa-plane"></i>
             </div>
             <h3>Airline Booking System</h3>
