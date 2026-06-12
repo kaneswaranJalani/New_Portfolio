@@ -12,7 +12,41 @@ body {
   overflow-x: hidden;
 }
 
-/* Gradient Orbs + Particle Canvas */
+/* ── Mouse Trail ──────────────────────────────────────────────── */
+.trail-dot {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.4s ease;
+}
+
+/* Main cursor ring */
+#cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 2px solid rgba(6, 182, 212, 0.8);
+  background: transparent;
+  transition: transform 0.12s ease, width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
+}
+
+/* Inner dot */
+#cursor-dot {
+  width: 7px;
+  height: 7px;
+  background: #06B6D4;
+  transition: transform 0.05s ease;
+}
+
+body:has(a:hover) #cursor-ring,
+body:has(button:hover) #cursor-ring {
+  width: 52px;
+  height: 52px;
+  border-color: rgba(6, 182, 212, 0.5);
+}
+
+/* ── Gradient Orbs + Particle Canvas ─────────────────────────── */
 .gradient-orb {
   position: fixed;
   border-radius: 50%;
@@ -56,7 +90,7 @@ body {
   opacity: 0.7;
 }
 
-/* Scroll Progress */
+/* ── Scroll Progress ──────────────────────────────────────────── */
 .progress-bar-container {
   position: fixed;
   top: 0;
@@ -84,7 +118,7 @@ section {
   padding: 5rem 0;
 }
 
-/* Navbar */
+/* ── Navbar ───────────────────────────────────────────────────── */
 .navbar {
   position: sticky;
   top: 0;
@@ -146,7 +180,7 @@ section {
   cursor: pointer;
 }
 
-/* Buttons */
+/* ── Buttons ──────────────────────────────────────────────────── */
 .btn-primary {
   background: linear-gradient(135deg, #1E3A8A, #06B6D4);
   border: none;
@@ -182,7 +216,7 @@ section {
   border-color: white;
 }
 
-/* Hero Section */
+/* ── Hero ─────────────────────────────────────────────────────── */
 .hero {
   display: flex;
   align-items: center;
@@ -191,12 +225,8 @@ section {
   flex-wrap: nowrap;
 }
 .hero-left { flex: 1.2; }
-.hero-right {
-  flex: 0.8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+.hero-right { flex: 0.8; display: flex; justify-content: center; align-items: center; }
+
 .typing-container {
   font-size: 2.8rem;
   font-weight: 700;
@@ -216,10 +246,8 @@ section {
   background-color: #06B6D4;
   animation: blink 0.8s infinite;
 }
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
-}
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
 .static-title {
   font-size: 1.5rem;
   margin-bottom: 1rem;
@@ -240,11 +268,8 @@ section {
   box-shadow: 0 8px 20px rgba(6, 182, 212, 0.15);
 }
 .desc { color: #CBD5E1; line-height: 1.6; }
-.social-icons {
-  display: flex;
-  gap: 1rem;
-  margin-top: 2rem;
-}
+
+.social-icons { display: flex; gap: 1rem; margin-top: 2rem; }
 .social-icon {
   width: 48px;
   height: 48px;
@@ -300,13 +325,13 @@ section {
   animation: scrollMarquee 20s linear infinite;
 }
 .marquee-content span { margin: 0 1.5rem; font-size: 0.9rem; }
-.marquee-content i { margin-right: 0.4rem; color: #06B6D4; }
+.marquee-content i    { margin-right: 0.4rem; color: #06B6D4; }
 @keyframes scrollMarquee {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
-/* About Section */
+/* ── About ────────────────────────────────────────────────────── */
 .about-box {
   background: rgba(17, 24, 39, 0.6);
   backdrop-filter: blur(16px);
@@ -319,7 +344,7 @@ section {
   align-items: center;
 }
 .about-text-box { flex: 1.2; }
-.about-img-box { flex: 0.8; text-align: center; }
+.about-img-box  { flex: 0.8; text-align: center; }
 .about-img-box img {
   max-width: 100%;
   border-radius: 28px;
@@ -335,42 +360,139 @@ section {
   color: transparent;
 }
 
-/* Skills */
+/* ── Skills — Modern Redesign ─────────────────────────────────── */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
   margin-top: 1rem;
 }
+
 .skill-card {
   background: rgba(17, 24, 39, 0.55);
-  backdrop-filter: blur(12px);
-  border-radius: 28px;
-  padding: 1.5rem;
-  transition: all 0.3s;
-  border: 1px solid rgba(6, 182, 212, 0.2);
+  backdrop-filter: blur(16px);
+  border-radius: 20px;
+  padding: 1.4rem 1.6rem;
+  border: 1px solid rgba(6, 182, 212, 0.15);
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+}
+.skill-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(6,182,212,0.06), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 .skill-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
+  border-color: rgba(6, 182, 212, 0.5);
+  box-shadow: 0 16px 32px -8px rgba(6, 182, 212, 0.2);
+}
+.skill-card:hover::before { opacity: 1; }
+
+.skill-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.1rem;
+}
+.skill-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.skill-icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(6, 182, 212, 0.12);
+  border: 1px solid rgba(6, 182, 212, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  color: #06B6D4;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+.skill-card:hover .skill-icon-wrap {
+  background: rgba(6, 182, 212, 0.2);
   border-color: #06B6D4;
-  box-shadow: 0 20px 30px -12px rgba(6, 182, 212, 0.3);
 }
-.progress-bar {
-  width: 100%;
-  height: 8px;
-  background: #1E293B;
-  border-radius: 10px;
-  margin: 0.8rem 0 0.3rem;
+.skill-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #E2E8F0;
 }
-.progress-fill {
-  width: 0%;
-  height: 100%;
-  background: linear-gradient(90deg, #1E3A8A, #06B6D4);
-  border-radius: 10px;
-  transition: width 1s ease;
+.skill-category {
+  font-size: 0.72rem;
+  color: #64748B;
+  margin-top: 1px;
 }
 
-/* Projects Grid */
+/* Circular ring badge */
+.skill-ring-wrap {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+.skill-ring-wrap svg {
+  transform: rotate(-90deg);
+}
+.skill-ring-bg {
+  fill: none;
+  stroke: rgba(6, 182, 212, 0.12);
+  stroke-width: 4;
+}
+.skill-ring-fill {
+  fill: none;
+  stroke: url(#ringGrad);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 113;
+  stroke-dashoffset: 113;
+  transition: stroke-dashoffset 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.skill-ring-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #06B6D4;
+}
+
+/* Dot-row level indicator */
+.skill-dots {
+  display: flex;
+  gap: 5px;
+  margin-top: 0.85rem;
+}
+.skill-dot {
+  height: 4px;
+  flex: 1;
+  border-radius: 99px;
+  background: rgba(6, 182, 212, 0.12);
+  transition: background 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+.skill-dot.active {
+  background: linear-gradient(90deg, #1E3A8A, #06B6D4);
+}
+.skill-dot.partial {
+  background: linear-gradient(90deg, rgba(30,58,138,0.5), rgba(6,182,212,0.4));
+}
+
+/* ── Projects ─────────────────────────────────────────────────── */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -404,22 +526,13 @@ section {
   display: inline-block;
   margin-bottom: 1rem;
 }
-.tech-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; }
-.tech-tag {
-  background: #1E293B;
-  padding: 0.2rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.7rem;
-}
+.tech-tags  { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; }
+.tech-tag   { background: #1E293B; padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.7rem; }
 .project-buttons { display: flex; gap: 1rem; margin-top: 1rem; }
-.btn-small { padding: 0.4rem 1rem; font-size: 0.8rem; }
+.btn-small  { padding: 0.4rem 1rem; font-size: 0.8rem; }
 
-/* Premium Contact Section */
-.contact-premium-wrapper {
-  display: flex;
-  gap: 2.5rem;
-  flex-wrap: wrap;
-}
+/* ── Contact ──────────────────────────────────────────────────── */
+.contact-premium-wrapper { display: flex; gap: 2.5rem; flex-wrap: wrap; }
 .contact-info-card {
   flex: 1;
   background: rgba(17, 24, 39, 0.55);
@@ -442,20 +555,12 @@ section {
   -webkit-background-clip: text;
   color: transparent;
 }
-.contact-detail-item {
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  margin: 1.8rem 0;
-}
+.contact-detail-item { display: flex; align-items: center; gap: 1.2rem; margin: 1.8rem 0; }
 .contact-icon-big {
-  width: 56px;
-  height: 56px;
+  width: 56px; height: 56px;
   background: rgba(6, 182, 212, 0.12);
   border-radius: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; align-items: center; justify-content: center;
   font-size: 1.6rem;
   color: #06B6D4;
   transition: 0.2s;
@@ -481,10 +586,7 @@ section {
   border-color: #06B6D4;
   box-shadow: 0 10px 25px -8px rgba(6, 182, 212, 0.2);
 }
-.form-floating-group {
-  position: relative;
-  margin-bottom: 1.8rem;
-}
+.form-floating-group { position: relative; margin-bottom: 1.8rem; }
 .form-floating-group input,
 .form-floating-group textarea {
   width: 100%;
@@ -497,10 +599,7 @@ section {
   transition: all 0.25s;
   font-family: inherit;
 }
-.form-floating-group textarea {
-  resize: vertical;
-  min-height: 120px;
-}
+.form-floating-group textarea { resize: vertical; min-height: 120px; }
 .form-floating-group label {
   position: absolute;
   left: 1.2rem;
@@ -510,12 +609,8 @@ section {
   pointer-events: none;
   transition: 0.2s;
   font-size: 1rem;
-  background: transparent;
 }
-.form-floating-group textarea ~ label {
-  top: 1.2rem;
-  transform: translateY(0);
-}
+.form-floating-group textarea ~ label { top: 1.2rem; transform: translateY(0); }
 .form-floating-group.focused label,
 .form-floating-group input:not(:placeholder-shown) ~ label,
 .form-floating-group textarea:not(:placeholder-shown) ~ label {
@@ -554,6 +649,8 @@ section {
   box-shadow: 0 8px 20px rgba(6, 182, 212, 0.4);
   gap: 0.8rem;
 }
+
+/* ── Toast ────────────────────────────────────────────────────── */
 .toast-msg {
   position: fixed;
   bottom: 30px;
@@ -580,31 +677,19 @@ footer {
   transform: translateY(30px);
   transition: opacity 0.7s ease, transform 0.6s ease;
 }
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
+.reveal.active { opacity: 1; transform: translateY(0); }
 
-/* Responsive */
+/* ── Responsive ───────────────────────────────────────────────── */
 @media (max-width: 880px) {
-  .hero {
-    flex-wrap: wrap;
-    flex-direction: column;
-    text-align: center;
-  }
-  .hero-left,
-  .hero-right {
-    width: 100%;
-    justify-content: center;
-  }
+  .hero { flex-wrap: wrap; flex-direction: column; text-align: center; }
+  .hero-left, .hero-right { width: 100%; justify-content: center; }
   .typing-container { font-size: 2rem; }
   .profile-img { width: 220px; height: 220px; }
   .desc-box { max-width: 90%; margin-left: auto; margin-right: auto; }
   .nav-links {
     display: none;
     position: absolute;
-    top: 70px;
-    left: 0;
+    top: 70px; left: 0;
     width: 100%;
     background: rgba(15, 23, 42, 0.95);
     backdrop-filter: blur(20px);
@@ -615,7 +700,7 @@ footer {
   .nav-links.active { display: flex; }
   .hamburger { display: block; }
   .about-box { flex-direction: column; text-align: center; }
-  .projects-grid,
-  .skills-grid { grid-template-columns: 1fr; }
+  .projects-grid, .skills-grid { grid-template-columns: 1fr; }
   .contact-premium-wrapper { flex-direction: column; }
+  #cursor-ring, #cursor-dot { display: none; }
 }
